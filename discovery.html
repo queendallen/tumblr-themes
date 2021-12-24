@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+    - theme #3 'discovery' by fallingforthemes
+    - feel free to make modifications but please don't steal my code
+    - let me know of any problems or questions
+    - Enjoy!
+ 
+    - CREDIT TO SHYTHEMES FOR VIDEO RESIZING
+    - CREDIT TO SHYTHEMES FOR LIKE & REBLOG BUTTON
+    - CREDIT TO GUKTHEMES FOR IMAGE RESIZING
+    - CREDIT TO TANNER ANDERSON FOR THEME INSPO
+    - CREDIT TO CHARIIC FOR ICON
+-->
+    <meta name="font:Font" content="Avalon"/>
+    
+    <meta name="text:Link 1" content=""/>
+    <meta name="text:Link 2" content=""/>
+    <meta name="text:Link 3" content=""/>
+    <meta name="text:URL 1" content=""/>
+    <meta name="text:URL 2" content=""/>
+    <meta name="text:URL 3" content=""/>
+    
+    <meta name="image:Side Img" content="https://static.tumblr.com/i5s2zks/bfznmc2ax/background2.jpg" />
+     <meta name="color:Background" content="#000000"/>
+     <meta name="color:Content Background" content="#000000"/>
+     <meta name="color:Shadow" content="#000000"/>
+     <meta name="color:Post Background" content="#000000"/>
+     <meta name="color:Header Font" content="#000000"/>
+     <meta name="color:Font" content="#000000"/>
+     <meta name="color:Info Font" content="#000000"/>
+     <meta name="color:Tags Font" content="#000000"/>
+     <meta name="color:Sidebar Header Font" content="#000000"/>
+     <meta name="color:Sidebar Background" content="#000000"/>
+     <meta name="color:Sidebar Font" content="#000000"/>
+     <meta name="color:Links" content="#000000"/>
+     <meta name="color:Links Font" content="#000000"/>
+     <meta name="color:Scrollbar Top" content="#000000"/>
+     <meta name="color:Scrollbar Bottom" content="#000000"/>
+     <meta name="color:Scrollbar Hover Top" content="#000000"/>
+     <meta name="color:Scrollbar Hover Bottom" content="#000000"/>
+    
+    <script type="text/javascript" src=”https://static.tumblr.com/p2evvtm/Wycm17d1m/tumblr_search_box.js”></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
+    <style type="text/css">
+        /***************** BASIC SETUP ***********************/
+        * {
+            position: relative;
+            font-family: {font:Font}, sans-serif;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        body {
+            background: {color:Background}; 
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 60vw;
+            height: 70vh;
+            box-shadow: -10px 10px {color:Shadow};
+            margin: 0 auto;
+            top: 10vh;
+            border-radius: 5px;
+        }
+        
+         /* POSTS */
+        .post_content {
+            background: {color:Content Background};
+            float: left;
+            width: calc(40vw - 40px);
+            max-width: calc(40vw - 40px);;
+            height: calc(70vh - 40px);
+            padding: 20px;
+            overflow-y: scroll;
+        }
+        
+        .content_header, .pagination, .pagination a {
+            color: {color:Header Font}; 
+        }
+        
+        .post {
+            background: {color:Post Background}; 
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            color: {color:Font};
+        }
+        
+        .post:first-child{
+            margin-top: 20px;
+        }
+        
+        .notes a, .date a, .reblogged_from, .like-b, .reblog {
+            color: {color:Info Font}; 
+        }
+        
+         /************ REBLOGGED POSTS ***************/
+        .reblog-item:not(:first-child){
+            padding-top: 10px;
+        }
+        
+        .post-avatar-image{
+            width: 25px;
+            height: 25px;
+        }
+        
+        .reblog-list .reblog-header .post-avatar {
+            margin-right: 10px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .reblog-item:not(:last-child) {
+            border-bottom: .5px solid rgba(0,0,0,0.5);
+        }
+        
+        .reblogged_from {
+            display: inline-block;
+        }
+        
+        .reblogged_from, .notes a, .date a{
+            text-decoration: none;
+        }     
+        
+        .notecontainer, .notecontainer a{
+            color: {color:Links Font};
+        }
+        
+        /************** TEXT POSTS **************/
+        .text {
+            padding-bottom: 10px;
+        }
+        
+        p a, .text a{
+            color: {color:Font}; 
+        }
+        
+        .title{
+            font-size: 1.3em;
+            padding-bottom: 5px;
+        }
+        
+        /************** INFO (Date, notes, like, reblog) **************/
+        .date, .notes, .reblog {
+            display: inline-block;
+        }
+        
+        .notes {
+            float: right;
+        }
+        
+        #like_reblog a{
+            padding-right: 10px;
+        }
+        
+        .like-b {
+            position:relative;
+           /* display:inline-block; */
+            height:1em;
+            line-height:1em;
+            overflow:hidden;
+            margin-bottom:-1px;
+        }
+        
+        .like-b .like_button iframe {
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            z-index:2;
+            opacity:0;
+        }
+        
+        .like-b .liked + .b {
+            color:inherit;
+        }
+        
+        .like-b .liked + .b:after {
+            content:'d';
+        }
+        
+        /* TAGS */
+        .tag {
+            text-decoration: none;
+            color: {color:Tags Font};
+        }
+        
+        .tags p{
+            display:inline;
+        }
+        
+        a.tag:after {
+            content:",\00a0";
+        }
+
+        a.tag:last-child::after {
+           content:"";
+        }
+        
+        /************** PAGINATION **************/
+        .pagination {
+            font-size: 1.2em;
+             width: calc(10vw - 40px);
+            margin: 0 auto;
+        }
+        
+        .current_page{
+            padding: 0 10px;
+        }
+        
+         /* MOUSE */
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        
+        /* Track */
+       /* ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }*/
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient({color:Scrollbar Top} 0%, {color:Scrollbar Bottom} 100%);
+          border-radius: 5px;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient({color:Scrollbar Hover Top} 0%, {color:Scrollbar Hover Bottom} 100%);
+        }
+        
+        /************** SIDEBAR **************/
+        .sidebar_header {
+            color: {color:Sidebar Header Font};
+        }
+        .sidebar {
+            background: {color:Sidebar Background}; 
+            float: right;
+            width: calc(20vw - 80px);;
+            height: calc(70vh - 40px);
+            padding: 20px 40px;
+            border-radius: 5px 0 0 5px;
+            box-shadow: -5px 1px 5px rgba(30,30,30, 0.7);
+            overflow-y: scroll;
+        }
+        
+        .side_img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        
+        #description {
+            text-align: center;
+        }
+        
+        .nav_links, .tags {
+            padding: 0;
+        }
+        
+        .nav_links {
+            text-align: center;
+        }
+        
+        .nav_links li, .tags li {
+            list-style-type: none;
+        }
+        
+        .nav_links li {
+            padding: 5px;
+            background: {color:Links};
+            margin-bottom: 2px;
+        }
+        
+        .links {
+            color: {color:Links Font};
+            text-decoration: none;
+        }
+        
+        footer {
+            width: 50px;
+            height: 50px;
+            left: 94vw;
+            top: 22vh;
+        }
+    </style>
+</head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <main class="post_content">
+            <a href="/"><h1 class="content_header">Welcome</h1></a>
+            {block:Posts}
+            <div class="posts" role="main">
+                <article class="post" id="{PostID}">
+                    <!------------- POST TYPES -------------->    
+                    {block:Photo}
+                    <article class="post_main">
+                        {LinkOpenTag}<img src="{PhotoURL-500}" />{LinkCloseTag}
+                    {block:Caption}<div class="text">{Caption}</div>{/block:Caption}
+                    </article>
+                    {/block:Photo}
+                     
+                    {block:Photoset}
+                    <article class="post_main">
+                    <div class="set"><center><div class="pxu"><div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}
+<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div></div></center></div>
+                    </article>
+                    {/block:Photoset}
+                     
+                    {block:Video}
+                    <article class="post_main">
+                    <div class="video">{Video-500}</div>
+                    {block:Caption}<div class="text">{Caption}</div>{/block:Caption}</article>{/block:Video}
+                     
+                    {block:Audio}
+                    <article class="post_main">
+                    {AudioPlayerBlack}
+                    <div class="text">~ {PlayCountWithLabel}</div>
+                    {block:Caption}<div class="text">{Caption}</div>{/block:Caption}</article>{/block:Audio}
+                     
+                    {block:Quote}
+                    <article class="post_main">
+                    <div class="title">“{Quote}”</div>
+                    {block:Source}<div class="text"><br>~ {Source}</div>{/block:Source}</article>{/block:Quote}
+                     
+                    {block:Text}
+                    <article class="post_main">
+                    {block:Title}<div class="title">{Title}</div>{/block:Title}
+                        {block:NotReblog}
+                            <div class="text">{Body}</div>
+                        {/block:NotReblog}
+   
+                        {block:RebloggedFrom}
+                        <div class="reblog-list">
+                            {block:Reblogs}
+                            <div class="reblog-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+                            <div class="reblog-header">
+                                <div class="post-avatar">
+                                    <div class="post-avatar-wrapper">
+                                        {block:IsActive}
+                                            <a class="post-avatar-link{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank"><img class="post-avatar-image" src="{PortraitURL-64}"></a>
+                                        {/block:IsActive}
+                                        {block:IsDeactivated}
+                                            <span class="inactive reblog-avatar{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}"><img class="post-avatar-image" src="{PortraitURL-64}"></span>
+                                        {/block:IsDeactivated}
+                                    </div>
+                                </div>
+                                {block:IsActive}
+                                <a target="_blank" class="active reblogged_from" href="{Permalink}">{Username}</a>
+                                {/block:IsActive}
+                                {block:IsDeactivated}
+                                <span class="inactive reblogged_from">{Username}</span>
+                                {/block:IsDeactivated}
+                            </div>
+                            <div class="post-reblog-content">
+                                <div class="post-body">
+                                {Body}</div>
+                            </div>
+                        </div>
+                        {/block:Reblogs}
+                        </div>
+                        {/block:RebloggedFrom}
+                        </article>
+                    {/block:Text}
+                     
+                    {block:Answer}
+                    <article class="post_content">
+                    <div class="title">{Question}</div>
+                    <div class="text">~ {Asker}</div>
+                    <div class="text">{Answer}</div>
+                    </article>
+                    {block:Answer}
+                     
+                    {block:Chat}
+                    <article class="post_content">
+                    {block:Title}<div class="title">{Title}</div>{/block:Title}
+                    <div class="text">
+                    {block:Lines}
+                    {block:Label}<strong>{Label}</strong>{/block:Label} {Line}<br />{/block:Lines}
+                    </div> <!--text-->
+                    </article>
+                    {/block:Chat}
+                     
+                    {block:Link}
+                    <article class="post_content">
+                    <div class="title"><a href="{URL}">{Name}</a></div>
+                    {block:Description}
+                    <div class="text">{Description}</div>
+                    {/block:Description}
+                    </article>
+                    {/block:Link}
+                   
+                    
+                    <!---------- LIKE, REBLOG, AND DATE ------------>
+                    <div class="info">
+                        <div class="date">
+                            <a href="{Permalink}">{block:Date}{TimeAgo}{/block:Date}</a>
+                        </div>
+                       
+                        {block:HomePage}
+                        <div class="notes">
+                            {block:NoteCount} 
+                                <a href="{Permalink}">{NoteCountWithLabel}</a>
+                            {/block:NoteCount}
+                        </div>
+                        
+                        <div id="like_reblog">
+                            <a class="like-b" href="#">{LikeButton}<span class="b">like</span></a>
+                            <a href="{ReblogURL}" target="_blank" class="reblog">reblog</a>
+                        </div> <!-- End of like_reblog-->
+                        {/block:HomePage}
+                        
+                        {block:HasTags}
+                        <div class="tags">
+                            <p>Tags: </p>
+                            {block:Tags}
+                                    <a class="tag" href="{TagURL}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                        {/block:HasTags}
+                        
+                    </div> <!-- End of like_reblog_date -->
+                    
+                    {block:PostNotes}
+                        <div class="notecontainer">{PostNotes}</div>
+                    {/block:PostNotes}
+                  </article>
+            </div> <!--End of posts -->
+            {/block:Posts}
+            
+            <!-- PAGINATION -->
+            <div class="pagination">
+                {block:Pagination}
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}">Last</a>
+                    {/block:PreviousPage}
+                    {block:JumpPagination}
+                        {block:CurrentPage}
+                            <span class="current_page">{PageNumber}</span>
+                        {/block:CurrentPage}
+                    {/block:JumpPagination}
+                    {block:NextPage}
+                    <a href="{NextPage}">Next</a>
+                    {/block:NextPage}
+                {/block:Pagination}
+            </div> <!-- End of pagination -->
+        </main> <!--End ofpost_content-->
+        
+        
+        <aside class="sidebar" role="complementary">
+          <h1 class="sidebar_header">Navigation</h1>
+          <div class="sidebar_content">
+            <img src="{image:Side Img}" class="side_img"/>
+              {block:Description}
+                <p id="description">{Description}</p>
+              {/block:Description}
+              <ul class="nav_links">
+                  <li><a href="/archive" class="links">Archive</a></li>
+                  {block:AskEnabled}
+                  <li><a href="/ask"><div class="links">Ask</div></a></li>
+                  {/block:AskEnabled}
+                  {block:SubmissionsEnabled} 
+                  <li><a href="/submit" class="links">Submit</a></li>
+                  {/block:SubmissionsEnabled}
+                  <li><a href="{text:URL 1}" class="links">{text:Link 1}</a></li>
+                  <li><a href="{text:URL 2}" class="links">{text:Link 2}</a></li>
+                  <li><a href="{text:URL 3}" class="links">{text:Link 3}</a></li>
+              </ul>
+          </div>
+        </aside> <!--End of sidebar -->
+        
+      </div> <!--End of content-->
+    </div> <!--End of container -->
+     <script>
+        $(document).ready(function(){
+           $('.photo-slideshow').pxuPhotoset({
+               lightbox: true,
+               rounded: false,
+               gutter: '0px',
+               borderRadius: '0px',
+               photoset: '.photo-slideshow',
+               photoWrap: '.photo-data',
+               photo: '.pxu-photo'
+           });
+        });
+    </script>
+  </body>
+  <footer><a href="https://fallingforthemes.tumblr.com" target="_blank" title="fallingforthemes"><span class="th th-shooting-star"></span></a></footer>
+</html>
